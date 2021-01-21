@@ -15,6 +15,12 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "MOVIE_CLIENT_ID",
+                project.properties["MOVIE_CLIENT_ID"] ?: "\"NOT_FOUND\""
+
+        buildConfigField "String", "MOVIE_CLIENT_SECRET",
+                project.properties["MOVIE_CLIENT_SECRET"] ?: "\"NOT_FOUND\""
     }
 
     buildTypes {
@@ -42,4 +48,22 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+    //rx android
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+    implementation "io.reactivex.rxjava2:rxjava:2.2.8"
+
+    //rx binding
+    implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0"
+    implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7-kotlin:2.0.0"
+
+    //rx CallAdapterFactory
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.4.0"
 }
